@@ -1,0 +1,41 @@
+dnl This file is part of net-utils
+
+dnl net-utils is free software; you can redistribute it and/or modify
+dnl it under the terms of the GNU General Public License as published by
+dnl the Free Software Foundation; either version 2, or (at your option)
+dnl any later version.
+
+dnl net-utils is distributed in the hope that it will be useful,
+dnl but WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+dnl GNU General Public License for more details.
+
+dnl You should have received a copy of the GNU General Public License
+dnl along with net-utils; see the file COPYING.  If not, write to
+dnl the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+dnl Boston, MA 02111-1307, USA.
+
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(rtelnet.c)
+
+AC_CONFIG_HEADER(config.h:config.in)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_INSTALL
+
+dnl Checks for libraries.
+
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(getopt.h fcntl.h sys/time.h unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+
+dnl Checks for library functions.
+AC_TYPE_SIGNAL
+AC_CHECK_FUNCS(select socket)
+
+AC_OUTPUT(Makefile)
